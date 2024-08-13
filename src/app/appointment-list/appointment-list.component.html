@@ -1,5 +1,13 @@
 <div>
+    <!-- ngModel allows for two way binding -->
     <input [(ngModel)]="newAppointmentTitle" placeholder="appointment description">
     <input [(ngModel)]="newAppointmentDate" type="date" placeholder="appointment date">
     <button (click)="addAppointment()">Add</button>
 </div>
+
+<ul>
+    <li *ngFor="let appointment of appointments">
+        <!-- list the appointments id, titles and dates in custom formats -->
+        {{appointment.id}} {{appointment.title}} {{appointment.date | date: 'dd.MM.yyyy'}}
+    </li>
+</ul>
