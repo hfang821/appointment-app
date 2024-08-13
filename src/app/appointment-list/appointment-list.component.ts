@@ -27,9 +27,12 @@ export class AppointmentListComponent {
       // Reset the form
       this.newAppointmentTitle = "";
       this.newAppointmentDate = new Date();
-
-      alert(this.appointments.length);
     }
+  }
+
+  deleteAppointment(index: number){
+    // Remove one appointment from the list by given index
+    this.appointments.splice(index, 1)
   }
 }
 
